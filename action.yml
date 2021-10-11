@@ -12,6 +12,7 @@ inputs:
     required: true
   gcp-service-account-key:
     description: "service account key used for uploading to gcs"
+    required: true
 
 runs:
   using: "composite"
