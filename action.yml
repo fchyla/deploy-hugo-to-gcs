@@ -14,12 +14,6 @@ inputs:
     description: "service account key used for up"
 
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-          submodules: recursive # Fetch the theme
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
-
       # Login to gcloud and export credentials
       - name: Login
         uses: google-github-actions/setup-gcloud@master
