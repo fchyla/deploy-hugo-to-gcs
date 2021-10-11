@@ -30,7 +30,9 @@ runs:
         hugo-version: "latest"
 
     - name: Build
+      shell: bash
       run: hugo --minify --environment ${{ inputs.deployment-environment }}
 
     - name: Deploy
+      shell: bash
       run: hugo deploy --target="${{ inputs.deployment-target }}" --environment ${{ inputs.deployment-environment }}
