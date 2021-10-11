@@ -11,7 +11,7 @@ inputs:
     description: "google cloud project id, used to generate application credentials during runtime"
     required: true
   gcp-service-account-key:
-    description: "service account key used for up"
+    description: "service account key used for uploading to gcs"
 
 runs:
   using: "composite"
