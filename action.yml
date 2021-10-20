@@ -1,4 +1,8 @@
 name: "Deploy hugo to GCS"
+author: "Filip Chyla"
+branding:
+  icon: "upload-cloud"
+  color: "green"
 description: "Deploy a multi-config hugo based website to a Google Cloud Storage bucket"
 inputs:
   deployment-target:
