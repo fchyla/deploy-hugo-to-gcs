@@ -17,17 +17,20 @@ inputs:
   gcp-service-account-key:
     description: "service account key used for uploading to gcs"
     required: true
-
+  gcp-create-credentials:
+    description: "export default credentials, if used you must run actions/checkout@v3 before this action"
+    required: true
 runs:
   using: "composite"
   steps:
     # Login to gcloud and export credentials
-    - name: Login
-      uses: google-github-actions/setup-gcloud@v0
+    - id: 'auth'
+      name: 'Authenticate to Google Cloud'
+      uses: 'google-github-actions/auth@v0'
       with:
-        ppeaceiris/actions-hugoroject_id: ${{ inputs.gcp-project-id }}
-        service_account_key: ${{ inputs.gcp-service-account-key }}
-        export_default_credentials: true
+        project_id: ${{ inputs.gcp-project-id }}
+        service_account: ${{ inputs.gcp-service-account-key }}
+        create_credentials_file: ${{ inputs.gcp-create-credentials }}
 
     - name: Hugo setup
       uses: peaceiris/actions-hugo@v2
