@@ -25,3 +25,7 @@ See https://gohugo.io/getting-started/configuration/ for more information about 
   - gcp-service-account-key:
     - description: "service account key used for uploading to gcs"
     - required: true
+  - gcp-create-credentials:
+    - description: "export default credentials, if used you must run actions/checkout@v3 before this action"
+	- value: true/fales
+    - required: true
