@@ -29,7 +29,7 @@ runs:
       uses: 'google-github-actions/auth@v0'
       with:
         project_id: ${{ inputs.gcp-project-id }}
-        service_account: ${{ inputs.gcp-service-account-key }}
+        credentials_json: ${{ inputs.gcp-service-account-key }}
         create_credentials_file: ${{ inputs.gcp-create-credentials }}
 
     - name: Hugo setup
