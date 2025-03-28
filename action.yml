@@ -26,16 +26,17 @@ runs:
     # Login to gcloud and export credentials
     - id: 'auth'
       name: 'Authenticate to Google Cloud'
-      uses: 'google-github-actions/auth@v0'
+      uses: 'google-github-actions/auth@v2'
       with:
         project_id: ${{ inputs.gcp-project-id }}
         credentials_json: ${{ inputs.gcp-service-account-key }}
         create_credentials_file: ${{ inputs.gcp-create-credentials }}
 
     - name: Hugo setup
-      uses: peaceiris/actions-hugo@v2
+      uses: peaceiris/actions-hugo@v3
       with:
         hugo-version: "latest"
+        extended: true
 
     - name: Build
       shell: bash
